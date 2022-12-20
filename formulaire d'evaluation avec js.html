@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercice</title>
+<script>
+  function test(){
+    var score=0;
+    var r1=document.getElementById("q1").value;
+    var r2=document.getElementById("q2").value;
+    var r3=document.getElementById("q3").checked;
+    var r31=document.getElementById("q31").checked;
+    var r33=document.getElementById("q33").checked;
+    if(r1=="" || r2=="" || (r3==false && r31==false && r33==false))
+        alert("Vous devez répondre à toutes les questions");
+    else
+    {
+      if(r1=="isocèle")
+      score++;
+      if(r2=="médiane")
+      score++;
+      if(r3==true)
+      score++;
+      document.getElementById("scorek").innerHTML=score+"/3";
+    }  
+   
+  }
+  function effacer() //pour effacer le résultat final
+  {
+    document.getElementById("scorek").innerHTML="";
+  }
+</script>
+</head>
+
+<body>
+<form>
+  <p>On appelle un triangle 
+    <select id="q1">
+      <option value="">choisir le type</option>
+      <option value="équilatéral">équilatéral</option>
+      <option value="rectangle">rectangle</option>
+      <option value="isocèle">isocèle</option>
+    </select> 
+  		celui qui a deux cotés du même longueur.
+  </p>
+  <p>On appelle 
+    <input type="text" size="10" id="q2" />
+  d'un triangle une droite qui joint un sommet au milieu du côté opposé.
+  </p>
+  <p>La somme des trois angles d'un triangle est égale à :<br />
+    <input type="radio" name="q3" id="q31" value="320" /> 320&deg;<br />
+    <input type="radio" name="q3" id="q3"  value="180" /> 180&deg;<br />
+    <input type="radio" name="q3" id="q33" value="150" /> 150&deg;
+  </p>
+  <p>
+    <input type="button" value="Corriger" onclick="test()" />
+    <input type="reset" value="Effacer" onclick="effacer()" /> <!--reset c'est un bouton qui efface les informations saisies-->
+  </p>
+</form>
+<div id="scorek" style="color: red;"></div>
+</body>
+</html>

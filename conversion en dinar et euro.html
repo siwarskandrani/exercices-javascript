@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function conversion(){
+            var nb = document.getElementById("nombre").value;
+            var etat = document.getElementById("e").checked;
+            if(etat)
+                document.getElementById("resultat").innerHTML= nb/3.2 + " euro";
+            else
+                document.getElementById("resultat").innerHTML= nb*3.2 + " dinar";
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <p>Saisir le montant à convertir : <input type="number" step="0.1" id="nombre"> </p>
+        <p>Convertir en : <input type="radio" onchange="conversion()" name="devise" value="Euro" id="e"> EURO 
+            <input type="radio" name="devise" onchange="conversion()" value="DINAR"> DINAR 
+        </p>
+       
+    </form>
+    <div id="resultat"></div>
+</body>
+</html>

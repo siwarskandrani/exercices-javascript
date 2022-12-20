@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fct1(){
+           alert(document.getElementById("titre").innerHTML) // on peut la remplacer par: alert("Bonjour Siwar")
+            document.getElementById("titre").innerHTML="Bon travail!"//Elle va remplacer Bonjour Siwar par Bon travail!
+        }
+    </script>
+</head>
+<body>
+    <h1 id="titre">Bonjour Siwar</h1>
+    <button onclick="fct1()">Cliquer ici</button>
+    <script>
+        var c=confirm("Voulez vous continuer?")//La méthode c=confirm() permet un choix entre "OK" et "Annuler".
+        if(c) // = if on a cliqué sur ok. Car par défaut l'appuiue sur ok signifie que la méthode va renvoyer true
+            alert("ok")
+        else
+            alert("Annuler")
+        
+        alert("Bonjour!")
+        var rep = prompt("Quel est votre age?","") //la méthode prompt c'est comme confirm mais avec l'ajout d'un champs de saisie.
+        document.write("<h2>votre age est " + rep + "</h2>")
+
+
+    </script>
+</body>
+</html>
